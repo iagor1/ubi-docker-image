@@ -16,9 +16,6 @@ build {
    provisioner "shell" {
     script = "setup.sh"
   }
-  provisioner "shell" {
-    inline = ["yum update -y","yum install ca-certificates -y"]
-  }
   post-processor "docker-tag" {
     repository = "rhel9-docker"
     tag        = ["ubi9"]
