@@ -13,6 +13,9 @@ source "docker" "rhel9" {
 
 build {
   sources = ["source.docker.rhel9"]
+   provisioner "shell" {
+    script = "setup.sh"
+  }
   provisioner "shell" {
     inline = ["yum update -y","yum install ca-certificates -y"]
   }
